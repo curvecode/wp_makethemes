@@ -10,7 +10,33 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/thanhlt2/wp_themes.git"
+    "url": "git@github.com:curvecode/wp_makethemes.git"
   },
-  "homepage": "https://bitbucket.org/thanhlt2/wp_themes#readme"
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-file-include": "^1.1.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-typescript": "^3.1.6",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^1.2.2",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-file-include": "^1.1.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "run-sequence": "^1.2.2"
+  },
+  "homepage": "https://curvecode.github.io/wp_makethemes/"
 }

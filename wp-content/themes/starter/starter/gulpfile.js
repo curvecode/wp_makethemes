@@ -25,7 +25,16 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
+// Watch task
+gulp.task('watch', function () {
+    gulp.watch('src/sass/*.scss', ['sass']);
+    
+    gulp.watch('./*.php').on('change', browserSync.reload);
+    gulp.watch('./**/*.css').on('change', browserSync.reload);
+    gulp.watch('./js/*.js').on('change', browserSync.reload);
+});
+
 // default task
-gulp.task('default', ['sass', 'browser-sync'], function() {
+gulp.task('default', ['watch', 'sass', 'browser-sync'], function() {
   gulp.watch('sass/**/*.scss', ['sass']);
 });
