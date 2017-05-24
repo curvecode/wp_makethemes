@@ -72,7 +72,7 @@ h2 {
 }
 .ico {
     &.ico-reply{
-        background: url("../img/comment_icon.png") no-repeat center center transparent;
+        background: url("./img/comment_icon.png") no-repeat center center transparent;
         width: 16px;
         height: 16px;
         display: inline-block;
@@ -96,15 +96,17 @@ body {
     left: 0;
     top: 0;
     height: 100%;
+    overflow: auto;
     h1{
         padding: 40px 0 0;
     }
     .nav{
         margin-top: 60px;
+        margin-left: 0;
         li {
             padding: 20px 0;
             list-style-type: none;
-            background:url("../img/border_nav.jpg") no-repeat bottom center transparent;
+            background:url("./img/border_nav.jpg") no-repeat bottom center transparent;
             a{
                 text-decoration: none;
             }

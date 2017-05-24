@@ -12,14 +12,10 @@
 ?>
 
 	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'starter' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'starter' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'starter' ), 'starter', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer id="footer">
+		<p class="pos-center copyright">© WaterWhy, 2014. All rights reserved. Done by Olia Gozha</p>
+	</footer>
+	
 </div><!-- #page -->
 <!-- Them script dung cho footer -->
 <?php

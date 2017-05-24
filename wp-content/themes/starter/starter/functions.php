@@ -141,3 +141,22 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Try with shortcode
+ *
+ **/
+function child_shortcode(){
+	return get_bloginfo( 'stylesheet_directory' );
+}
+add_shortcode('path', 'child_shortcode');
+function blogCopyRight()
+{
+	$blog_name = "(c) Copyright by 2017";
+	return $blog_name;
+}
+add_shortcode('copyright', 'blogCopyRight');
+function sayHello($name = "") {
+	return "Hello ".$name;
+}
+add_shortcode('sayhello', 'sayHello');
