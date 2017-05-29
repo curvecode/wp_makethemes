@@ -12,16 +12,20 @@
 ?>
 
 	</div><!-- #content -->
-	<footer id="footer">
-		<p class="pos-center copyright">© WaterWhy, 2014. All rights reserved. Done by Olia Gozha</p>
-	</footer>
-	
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'starter' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'starter' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'starter' ), 'starter', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
 </div><!-- #page -->
 <!-- Them script dung cho footer -->
 <?php
-	wp_enqueue_script( 'jquery', get_template_directory_uri().'./js/lib/jquery.js', '', 'all' );
-	wp_enqueue_script( 'jquery-bx-slider', get_template_directory_uri().'./js/lib/jquery.bxslider.min.js', '', 'all' );
-	wp_enqueue_script( 'jquery-main', get_template_directory_uri().'./js/main.js', '', 'all' )
+	// wp_enqueue_script( 'jquery', get_template_directory_uri().'./js/lib/jquery.js', '', 'all' );
+	// wp_enqueue_script( 'jquery-bx-slider', get_template_directory_uri().'./js/lib/jquery.bxslider.min.js', '', 'all' );
+	// wp_enqueue_script( 'jquery-main', get_template_directory_uri().'./js/main.js', '', 'all' )
 ?>
 <?php wp_footer(); ?>
 

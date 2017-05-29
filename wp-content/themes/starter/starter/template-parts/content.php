@@ -25,15 +25,8 @@
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
-	<?php 
-		if (is_page('top-page')) {
-			echo '<div class="wrapper">';
-			
-		}
-		 else {
-			echo '<div class="entry-content">';
-		 }
-		?>
+
+	<div class="entry-content">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
