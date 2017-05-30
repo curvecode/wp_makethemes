@@ -80,12 +80,13 @@ if (!function_exists('thanhlt_header')) {
                         get_bloginfo('description'),
                         get_bloginfo('sitename')
                     );
+                } else {
+                    printf('<h2><a href="%1$s" title="%2$s">%3$s</a></h2>', 
+                        get_bloginfo('url'),
+                        get_bloginfo('description'),
+                        get_bloginfo('sitename')
+                    );
                 }
-                // if (is_user_logged_in()) {
-                //     printf('<p>%1$s</p>',
-                //         get_bloginfo('admin_email')
-                //     );
-                // }
             ?>
         </div>
         <div class="site-description">
@@ -136,4 +137,115 @@ if (!function_exists('thanhlt_thumbnail')) {
             </figure>
         <?php endif; ?>
     <?php }
+}
+
+/*---------------
+thanhlt_entry_header */
+if (!function_exists('thanhlt_entry_header')) {
+    function thanhlt_entry_header() {
+        if (!is_single()) : ?>
+        <h3 class="entry-title">
+            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute( ); ?>">
+                <?php the_title( ); ?>
+            </a>
+        </h3>
+        <?php else : ?>
+        <h4>
+            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute( ); ?>">
+                <?php the_title() ?>
+            </a>
+        </h4>
+        <?php 
+            endif;
+    }
+}
+
+/*------------------------
+@ Ham hien thi thong tin cua post (Post Meta)
+@ thanhlt_entry_meta */
+if (!function_exists('thanhlt_entry_meta')) {
+    function thanhlt_entry_meta() {
+        if (!is_page()) : 
+            echo '<div class="entry-meta">';
+            // Hien thi ten tac gia, ten category va ngay thang dang bai
+            printf(__('<span class="author">Posted by : %1$s </span>', 'thanhlt'), get_the_author());
+            printf(__('<span class="post-format"> Posts Format :  %1$s </span>', 'thanhlt'), get_post_format());
+            printf(__('<span class="date-published"> %1$s </span>', 'thanhlt'), get_the_date());
+            printf(__('<span class="category"> in %1$s </span>', 'thanhlt'), get_the_category_list(','));
+
+            // Hien thi so dem luot binh luan
+            if (comments_open()) :
+                echo '<p class="meta-reply">';
+                comments_popup_link( 
+                    __('Leave a comment' ,'thanhlt'), 
+                    __('One comment ','thanhlt'), 
+                    __('% comments', 'thanhlt'), 
+                    'css_class', 
+                    __('Read all comments', 'thanhlt') );
+                echo '</p>';
+            endif;
+            echo '</div>';
+        endif;
+    }
+}
+
+/*------------------------
+thanhlt_entry_content */
+if (!function_exists('thanhlt_entry_content')) {
+    function thanhlt_entry_content() {
+        if (!is_single()) :
+            the_excerpt();
+        else:
+            the_content(); // Phai dua vao vong lap moi hien thi
+            // Code hien thi phan trang trong post type
+            $link_pages = array(
+                'before' => __('<p>Page: ', 'thanhlt'),
+                'after' => '</p>',
+                'nextpagelink' => __('Next page', 'thanhlt'),
+                'previouspagelink' => __('Previous page', 'thanhlt')
+            );
+            wp_link_pages($link_pages);
+        endif;
+        
+    }
+}
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+if (!function_exists('wpdocs_excerpt_more')) {
+    function wpdocs_excerpt_more( $more ) {
+        return sprintf( '...<a class="read-more" href="%1$s">%2$s</a>',
+            get_permalink( get_the_ID() ),
+            __( 'Read More', 'thanhlt' )
+        );
+    }
+    add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+}
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+if (!function_exists('wpdocs_custom_excerpt_length')) {
+    function wpdocs_custom_excerpt_length( $length ) {
+        return 10;
+    }
+    add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+}
+
+/*----------------
+thanhlt_entry_tag */
+if (!function_exists('thanhlt_entry_tag')) {
+    function thanhlt_entry_tag() {
+        if (has_tag()) {
+            echo '<div class="tag"></div>';
+            printf(__('Tagged in %1$s,', 'thanhlt'), get_the_tag_list('', ', '));
+            echo '</div>';
+        }
+    }
 }
