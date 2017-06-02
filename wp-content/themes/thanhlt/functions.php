@@ -193,7 +193,7 @@ if (!function_exists('thanhlt_entry_meta')) {
 thanhlt_entry_content */
 if (!function_exists('thanhlt_entry_content')) {
     function thanhlt_entry_content() {
-        if (!is_single()) :
+        if (!is_single() && !is_page()) :
             the_excerpt();
         else:
             the_content(); // Phai dua vao vong lap moi hien thi

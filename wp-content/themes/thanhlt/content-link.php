@@ -5,7 +5,7 @@
     <div class="entry-header">
         <?php 
             $link = get_post_meta( $post->ID, 'format_link_url', true );
-            $link_description( $post->ID, 'format_link_description', true );
+            $link_description = get_post_meta( $post->ID, 'format_link_description', true );
 
             if ( is_single() ) {
                 printf('<h2 class="entry-title"><a href="%1$s" target="_blank">%2$s</a></h2>', $link, get_the_title());
