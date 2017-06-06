@@ -10,8 +10,8 @@
             <?php get_template_part('content', 'none') ?>
         <?php endif; ?>
     </div>
-    <div id="sidebar">
+    <ul id="sidebar">
         <?php get_sidebar() ?>
-    </div>
+    </ul>
 </div>
 <?php get_footer(); ?>
