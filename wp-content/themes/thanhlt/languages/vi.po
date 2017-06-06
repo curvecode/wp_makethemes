@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2017-06-06 15:35+0700\n"
-"PO-Revision-Date: 2017-06-06 15:49+0700\n"
+"PO-Revision-Date: 2017-06-06 17:40+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -35,7 +35,7 @@ msgstr "Bài được gắn thẻ: %1$s"
 #: archive.php:9
 #, php-format
 msgid "Posts categorized: %1$s"
-msgstr ""
+msgstr "Bài được gắn thẻ: %1$s"
 
 #: archive.php:11
 #, php-format
@@ -112,7 +112,7 @@ msgstr "Ghi bình luận"
 
 #: functions.php:181
 msgid "One comment "
-msgstr "Một bình luận "
+msgstr "Một bình luận"
 
 #: functions.php:182
 #, php-format
