@@ -7,13 +7,12 @@
             <?php get_template_part('author-bio'); ?>
             <?php comments_template(); ?>
         <?php endwhile; ?>
-        
         <?php else: ?>
             <?php get_template_part('content', 'none') ?>
         <?php endif; ?>
     </div>
-    <div id="sidebar">
-        <?php get_sidebar() ?>
-    </div>
+    <ul id="sidebar">
+        <?php get_sidebar(); ?>
+    </ul>
 </div>
 <?php get_footer(); ?>

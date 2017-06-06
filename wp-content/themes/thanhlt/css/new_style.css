@@ -27,6 +27,27 @@ ul li {
   padding-left: 20px;
 }
 
+#sidebar > li {
+  background: rgba(146, 146, 146, 0.65);
+  padding: 15px 15px 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #ccc;
+}
+
+#sidebar > li h2 {
+  margin-top: 0;
+}
+
+#sidebar > li > ul {
+  padding-left: 0;
+}
+
+#wp-calendar td > a {
+  color: #e94949;
+  font-weight: bold;
+}
+
 a {
   text-decoration: none;
   color: #bf172d;
@@ -36,9 +57,14 @@ a:visited {
   color: #888888;
 }
 
+.logo .site-name h1 a {
+  text-shadow: 2px 2px 1px #ccc;
+  font-size: 2.2em;
+}
+
 .logo .site-name h2 a {
   text-shadow: 2px 2px 1px #ccc;
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 .logo .site-description {
@@ -86,4 +112,24 @@ a:visited {
 
 .logo .primary-menu ul li ul {
   display: none;
+}
+
+article {
+  overflow: hidden;
+}
+
+article .entry-thumbnail {
+  float: left;
+  width: 150px;
+  margin-right: 10px;
+}
+
+article .entry-header {
+  float: left;
+  width: 450px;
+}
+
+article .entry-content {
+  float: left;
+  width: 450px;
 }

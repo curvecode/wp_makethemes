@@ -243,7 +243,7 @@ thanhlt_entry_tag */
 if (!function_exists('thanhlt_entry_tag')) {
     function thanhlt_entry_tag() {
         if (has_tag()) {
-            echo '<div class="tag"></div>';
+            echo '<div class="tag">';
             printf(__('Tagged in %1$s,', 'thanhlt'), get_the_tag_list('', ', '));
             echo '</div>';
         }

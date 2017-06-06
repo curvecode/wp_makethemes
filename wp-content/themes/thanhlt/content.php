@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID();?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID();?>" >
     <div class="entry-thumbnail">
         <?php thanhlt_thumbnail('thumbnail'); ?>
     </div>

@@ -23,6 +23,23 @@ ul{
     float: right;
     margin-left: 10px;
     padding-left: 20px;
+    > li {
+        background: rgba(146, 146, 146, 0.65);
+        padding: 15px 15px 15px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px #ccc;
+        h2 {
+            margin-top: 0;
+        }
+        > ul {
+            padding-left: 0;
+        }
+    }
+}
+#wp-calendar td > a {
+    color: #e94949;
+    font-weight: bold;
 }
 a {
     text-decoration: none;
@@ -34,10 +51,16 @@ a:visited {
 .logo{
     
     .site-name{
+        h1 {
+            a {
+                text-shadow: 2px 2px 1px #ccc;
+                font-size: 2.2em;
+            }
+        }
         h2{
             a{
                 text-shadow: 2px 2px 1px #ccc;
-                font-size: 2em;
+                font-size: 1.8em;
             }
         }
     }
@@ -84,5 +107,21 @@ a:visited {
                 }
             }
         }
+    }
+}
+article{
+    overflow: hidden;
+    .entry-thumbnail{
+        float: left;
+        width: 150px;
+        margin-right: 10px;
+    }
+    .entry-header{
+        float: left;
+        width: 450px;
+    }
+    .entry-content{
+        float: left;
+        width: 450px;
     }
 }
