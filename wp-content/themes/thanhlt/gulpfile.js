@@ -18,9 +18,9 @@ gulp.task('browser-sync', function() {
 // Configure Sass task to run when the 
 
 gulp.task('sass', function() {
-  return gulp.src('sass/*.scss')
+  return gulp.src('sass/**/*.scss')
     .pipe(sass({
-      'outputStyle' : 'compressed'
+      'outputStyle' : 'expanded' // nested, expanded, compact, compressed
     }))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());

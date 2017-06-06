@@ -20,8 +20,8 @@
         <?php endif; ?>
         <?php thanhlt_phantrang() ?>
     </div>
-    <div id="sidebar">
+    <ul id="sidebar">
         <?php get_sidebar() ?>
-    </div>
+    </ul>
 </div>
 <?php get_footer();?>

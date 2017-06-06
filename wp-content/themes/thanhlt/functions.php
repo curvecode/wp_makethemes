@@ -249,3 +249,15 @@ if (!function_exists('thanhlt_entry_tag')) {
         }
     }
 }
+
+/* ------------ 
+ Nhung style.css */
+function thanhlt_style() {
+    wp_register_style('main-style', get_template_directory_uri().'/style.css', 'all');
+    wp_enqueue_style('main-style');
+    wp_register_style('new-style', get_template_directory_uri().'/css/new_style.css', 'all');
+    wp_enqueue_style('new-style');
+    wp_register_style('font-style', 'https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Lato|Open+Sans|Yeseva+One', 'all');
+    wp_enqueue_style('font-style');
+}
+add_action('wp_enqueue_scripts', 'thanhlt_style');
