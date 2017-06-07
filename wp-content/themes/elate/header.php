@@ -4,9 +4,10 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" <?php language_attributes(); ?> > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?> > <!--<![endif]-->
 	<head>
-	<meta charset="utf-8">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Elate &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<!--<title>Elate &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>-->
+	<title><?php bloginfo( 'title' ) ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
