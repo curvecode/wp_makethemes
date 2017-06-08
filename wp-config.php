@@ -18,6 +18,9 @@
  * @package WordPress
  */
 
+define('WP_HOME', 'http://localhost/wp_maketheme/');
+define('WP_SITEURL', 'http://localhost/wp_maketheme/');
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'wp_maketheme');
