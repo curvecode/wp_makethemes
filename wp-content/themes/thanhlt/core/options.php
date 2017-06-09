@@ -43,11 +43,11 @@
         'async_typography'     => true,
         // Use a asynchronous font on the front end or font string
         //'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
-        'admin_bar'            => false,
+        'admin_bar'            => true,
         // Show the panel pages on the admin bar
         'admin_bar_icon'       => 'dashicons-portfolio',
         // Choose an icon for the admin bar menu
-        'admin_bar_priority'   => 50,
+        'admin_bar_priority'   => 150,
         // Choose an priority for the admin bar menu
         'global_variable'      => '',
         // Set a different name for your global variable other than the opt_name
@@ -237,75 +237,134 @@
      */
 
     // -> START Basic Fields
-    Redux::setSection( $opt_name, array(
-        'title'  => __( 'Basic Field', 'redux-framework-demo_thanhlt' ),
-        'id'     => 'basic',
-        'desc'   => __( 'Basic field with no subsections.', 'redux-framework-demo_thanhlt' ),
-        'icon'   => 'el el-home',
-        'fields' => array(
+    // Redux::setSection( $opt_name, array(
+    //     'title'  => __( 'Basic Field', 'redux-framework-demo_thanhlt' ),
+    //     'id'     => 'basic',
+    //     'desc'   => __( 'Basic field with no subsections.', 'redux-framework-demo_thanhlt' ),
+    //     'icon'   => 'el el-home',
+    //     'fields' => array(
+    //         array(
+    //             'id'       => 'opt-text',
+    //             'type'     => 'text',
+    //             'title'    => __( 'Example Text', 'redux-framework-demo_thanhlt' ),
+    //             'desc'     => __( 'Example description.', 'redux-framework-demo_thanhlt' ),
+    //             'subtitle' => __( 'Example subtitle.', 'redux-framework-demo_thanhlt' ),
+    //             'hint'     => array(
+    //                 'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
+    //             )
+    //         ),
+    //         array(
+    //             'id'       => 'opt-text-1',
+    //             'type'     => 'text',
+    //             'title'    => __( 'Example Text 1', 'redux-framework-demo_thanhlt' ),
+    //             'desc'     => __( 'Example description 1.', 'redux-framework-demo_thanhlt' ),
+    //             'subtitle' => __( 'Example subtitle 1.', 'redux-framework-demo_thanhlt' ),
+    //             'hint'     => array(
+    //                 'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
+    //             )
+    //         )
+    //     )
+    // ) );
+
+    // Redux::setSection( $opt_name, array(
+    //     'title' => __( 'Basic Fields', 'redux-framework-demo_thanhlt' ),
+    //     'id'    => 'basic',
+    //     'desc'  => __( 'Basic fields as subsections.', 'redux-framework-demo_thanhlt' ),
+    //     'icon'  => 'el el-home'
+    // ) );
+
+    // Redux::setSection( $opt_name, array(
+    //     'title'      => __( 'Text', 'redux-framework-demo_thanhlt' ),
+    //     'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo_thanhlt' ) . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">//docs.reduxframework.com/core/fields/text/</a>',
+    //     'id'         => 'opt-text-subsection',
+    //     'subsection' => true,
+    //     'fields'     => array(
+    //         array(
+    //             'id'       => 'text-example',
+    //             'type'     => 'text',
+    //             'title'    => __( 'Text Field', 'redux-framework-demo_thanhlt' ),
+    //             'subtitle' => __( 'Subtitle', 'redux-framework-demo_thanhlt' ),
+    //             'desc'     => __( 'Field Description', 'redux-framework-demo_thanhlt' ),
+    //             'default'  => 'Default Text',
+    //         ),
+    //     )
+    // ) );
+
+    // Redux::setSection( $opt_name, array(
+    //     'title'      => __( 'Text Area', 'redux-framework-demo_thanhlt' ),
+    //     'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo_thanhlt' ) . '<a href="//docs.reduxframework.com/core/fields/textarea/" target="_blank">//docs.reduxframework.com/core/fields/textarea/</a>',
+    //     'id'         => 'opt-textarea-subsection',
+    //     'subsection' => true,
+    //     'fields'     => array(
+    //         array(
+    //             'id'       => 'textarea-example',
+    //             'type'     => 'textarea',
+    //             'title'    => __( 'Text Area Field', 'redux-framework-demo_thanhlt' ),
+    //             'subtitle' => __( 'Subtitle', 'redux-framework-demo_thanhlt' ),
+    //             'desc'     => __( 'Field Description', 'redux-framework-demo_thanhlt' ),
+    //             'default'  => 'Default Text',
+    //         ),
+    //     )
+    // ) );
+
+    Redux::setSection($opt_name, array(
+        'id'            => 'first_option',
+        'title'         => __('First Section', 'thanhlt'),
+        'desc'          => __('First description', 'thanhlt'),
+        'heading'       => __('First heading', 'thanhlt'),
+        'icon'          => 'el el-heart',
+        'fields'        => array(
             array(
-                'id'       => 'opt-text',
+                'id'       => 'text-field-example',
                 'type'     => 'text',
-                'title'    => __( 'Example Text', 'redux-framework-demo_thanhlt' ),
-                'desc'     => __( 'Example description.', 'redux-framework-demo_thanhlt' ),
-                'subtitle' => __( 'Example subtitle.', 'redux-framework-demo_thanhlt' ),
-                'hint'     => array(
-                    'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
-                )
+                'title'    => __('Enter your name', 'thanhlt'),
+                'subtitle' => __('Subtitle', 'thanhlt'),
+                'desc'     => __('Please input your name', 'thanhlt')
+            ),
+        )
+    ));
+
+    Redux::setSection($opt_name, array(
+        'id'            => 'thanhlt_rss_feed_option',
+        'title'         => __('RSS Feed', 'thanhlt'),
+        'desc'          => __('Nhập đường dẫn RSS tại đây', 'thanhlt'),
+        'heading'       => __('Phân tích RSS URL', 'thanhlt'),
+        'icon'          => 'el el-rss',
+        'fields'        => array(
+            array(
+                'id'       => 'text-field-url-rss',
+                'type'     => 'text',
+                'title'    => __('Nhập URL', 'thanhlt'),
+                'icon'     => 'el el-rss',
+                'subtitle' => __('URL', 'thanhlt'),
+                'desc'     => __('Hãy nhập đường dẫn đến RSS cần phân tích', 'thanhlt')
             ),
             array(
-                'id'       => 'opt-text-1',
-                'type'     => 'text',
-                'title'    => __( 'Example Text 1', 'redux-framework-demo_thanhlt' ),
-                'desc'     => __( 'Example description 1.', 'redux-framework-demo_thanhlt' ),
-                'subtitle' => __( 'Example subtitle 1.', 'redux-framework-demo_thanhlt' ),
-                'hint'     => array(
-                    'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
-                )
+                'id'       => 'opt-button-set',
+                'type'     => 'button_set',
+                'title'    => __( 'Button Set Option', 'redux-framework-demo' ),
+                'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+                'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                //Must provide key => value pairs for radio options
+                'options'  => array(
+                    '1' => 'Opt 1',
+                    '2' => 'Opt 2',
+                    '3' => 'Opt 3'
+                ),
+                'default'  => '2'
+            ),
+            array(
+                'id'       => 'opt-ace-editor-js',
+                'type'     => 'ace_editor',
+                'title'    => __( 'JS Code', 'redux-framework-demo' ),
+                'subtitle' => __( 'Paste your JS code here.', 'redux-framework-demo' ),
+                'mode'     => 'javascript',
+                'theme'    => 'chrome',
+                'desc'     => 'Possible modes can be found at <a href="' . 'http://' . 'ace.c9.io" target="_blank">' . 'http://' . 'ace.c9.io/</a>.',
+                'default'  => "jQuery(document).ready(function(){\n\n});"
             )
         )
-    ) );
-
-    Redux::setSection( $opt_name, array(
-        'title' => __( 'Basic Fields', 'redux-framework-demo_thanhlt' ),
-        'id'    => 'basic',
-        'desc'  => __( 'Basic fields as subsections.', 'redux-framework-demo_thanhlt' ),
-        'icon'  => 'el el-home'
-    ) );
-
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Text', 'redux-framework-demo_thanhlt' ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo_thanhlt' ) . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">//docs.reduxframework.com/core/fields/text/</a>',
-        'id'         => 'opt-text-subsection',
-        'subsection' => true,
-        'fields'     => array(
-            array(
-                'id'       => 'text-example',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-demo_thanhlt' ),
-                'subtitle' => __( 'Subtitle', 'redux-framework-demo_thanhlt' ),
-                'desc'     => __( 'Field Description', 'redux-framework-demo_thanhlt' ),
-                'default'  => 'Default Text',
-            ),
-        )
-    ) );
-
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Text Area', 'redux-framework-demo_thanhlt' ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo_thanhlt' ) . '<a href="//docs.reduxframework.com/core/fields/textarea/" target="_blank">//docs.reduxframework.com/core/fields/textarea/</a>',
-        'id'         => 'opt-textarea-subsection',
-        'subsection' => true,
-        'fields'     => array(
-            array(
-                'id'       => 'textarea-example',
-                'type'     => 'textarea',
-                'title'    => __( 'Text Area Field', 'redux-framework-demo_thanhlt' ),
-                'subtitle' => __( 'Subtitle', 'redux-framework-demo_thanhlt' ),
-                'desc'     => __( 'Field Description', 'redux-framework-demo_thanhlt' ),
-                'default'  => 'Default Text',
-            ),
-        )
-    ) );
+    ));
 
     /*
      * <--- END SECTIONS
