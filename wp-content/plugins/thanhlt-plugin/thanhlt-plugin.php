@@ -108,4 +108,20 @@ if (!function_exists('thanhlt_prefix_uninstall')) {
     register_uninstall_hook(__FILE__, 'thanhlt_prefix_uninstall');
 }
 
+/*
+@Ham dang ky style
+*/
+if (!function_exists('thanhlt_plugin_reg_style')) {
+    function thanhlt_plugin_reg_style() {
+        wp_register_style('thanhlt-plugin-style', plugin_dir_url(__FILE__).'css/style.css');
+        wp_enqueue_style( 'thanhlt-plugin-style');
+    }
+    add_action('admin_enqueue_scripts', 'thanhlt_plugin_reg_style');
+}
+
+/*
+@Ham dang ky script
+*/
+
+
 ?>
