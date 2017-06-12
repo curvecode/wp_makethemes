@@ -3,6 +3,52 @@
 define('THEME_URL', get_stylesheet_directory());
 define('CORE', THEME_URL . "/core");
 
+/**
+@ Khai bao chuc nang cua theme 
+**/
+if ( !function_exists('elate_theme_setup')) {
+    function elate_theme_setup() {
+        /* Thiet lap text domain */
+        $language_folder = THEME_URL . '/languages';
+        load_theme_textdomain('elate', $language_folder);
+
+        /** Tu dong them link RSS len <head> **/
+        add_theme_support( 'automatic-feed-links' );
+
+        /** Them post thumbnail **/
+        add_theme_support( 'post-thumbnails' );
+
+        /** post format */
+        add_theme_support( 'post-formats', array(
+            'image', 'video', 'gallery', 'quote', 'link'
+        ) );
+
+        /** Them title-tag **/
+        add_theme_support('title-tag');
+
+        /** Them custom background **/
+        $default_background = array(
+            'default-color' => '#e8e8e8'
+        );
+        add_theme_support( 'custom-background',  $default_background); // tham so mau mac dinh
+
+        /** Them menu */
+        register_nav_menu( 'primary-menu', __('Primary Menu', 'elate') );
+
+        /** Tao sidebar */
+        $sidebar = array(
+            'name' => __('Main Sidebar', 'elate'),
+            'id' => 'main-sidebar',
+            'description' => __('Default sidebar', 'elate'),
+            'class' => 'main-sidebar',
+            'before_title' => '<h2 class="widgettile">',
+            'after_title' => '</h2>'
+        );
+        register_sidebar( $sidebar );
+    }
+
+    add_action('init', 'elate_theme_setup');
+}
 
 /** Ham them style vao cho page **/
 if (!function_exists('elate_style')) {
