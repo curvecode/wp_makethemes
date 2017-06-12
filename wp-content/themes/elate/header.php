@@ -52,8 +52,8 @@
 						<!-- Mobile Toggle Menu Button -->
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
 						<a class="navbar-brand" href="index.html">Elate</a> 
-						</div>
-						<div id="navbar" class="navbar-collapse collapse">
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
 							<li><a href="#" data-nav-section="work"><span>Work</span></a></li>
@@ -63,24 +63,26 @@
 							<li><a href="#" data-nav-section="contact"><span>Contact</span></a></li>
 						</ul>
 					</div>
+					<ul class="lang-switcher">
+						<?php 
+							$args = array(
+								'dropdown' => 0, // Hiển thị dạng đổ xuống, thiết lập giá trị là 1 nó sẽ thành dạng đổ xuống (default: 0)
+								'show_names' => 0, // Hiển thị tên ngôn ngữ, giá trị là 1 nó sẽ hiển thị tên ngôn ngữ (default: 1)
+								'display_name_as' =>  'name', // Hiển thị tên ngôn ngữ theo “name” hoặc “slug” (default: ‘name’)
+								'show_flags' => 1, // Hiển thị lá cờ nếu giá trị là 1 (default: 0)
+								'hide_if_empty' => 0, // Ẩn các ngôn ngữ nếu ngôn ngữ dó chưa có post hoặc page tương ứng, giá trị 1 là ẩn (default: 1)
+								'force_home' => 0, // Sử dụng đường dẫn trang chủ nếu giá trị là 1, nếu giá trị là 0 thì nó sẽ chuyển trang hiện tại sang ngôn ngữ đã chọn (default: 0)
+								'echo' => 1, // echoes if set to 1, returns a string if set to 0 (default: 1)
+								'hide_if_no_translation' => 0, // Ẩn ngôn ngữ nếu ngôn ngữ đó chưa có giá trị nào được dịch (default: 0)
+								'hide_current' => 0, // Ẩn ngôn ngữ hiện tại đang chọn nếu giá trị là 1 (default: 0)
+								'post_id' => null, // Nếu giá trị này thiết lập thì phần ngôn ngữ đó sẽ trỏ tới một post hoặc page chỉ định qua ID (default: null)
+								'raw' => 0 // Nếu bạn muốn tự viết lại CSS cho phần này thì thiết lập giá trị là 1 (default:0)
+							);
+							pll_the_languages($args);
+						?>
+					</ul>
 			    </nav>
 			  <!-- </div> -->
 			  </div>
-			  <?php 
-			  	$args = array(
-					'dropdown' => 0, // Hiển thị dạng đổ xuống, thiết lập giá trị là 1 nó sẽ thành dạng đổ xuống (default: 0)
-					'show_names' => 0, // Hiển thị tên ngôn ngữ, giá trị là 1 nó sẽ hiển thị tên ngôn ngữ (default: 1)
-					'display_name_as' =>  'name', // Hiển thị tên ngôn ngữ theo “name” hoặc “slug” (default: ‘name’)
-					'show_flags' => 1, // Hiển thị lá cờ nếu giá trị là 1 (default: 0)
-					'hide_if_empty' => 0, // Ẩn các ngôn ngữ nếu ngôn ngữ dó chưa có post hoặc page tương ứng, giá trị 1 là ẩn (default: 1)
-					'force_home' => 0, // Sử dụng đường dẫn trang chủ nếu giá trị là 1, nếu giá trị là 0 thì nó sẽ chuyển trang hiện tại sang ngôn ngữ đã chọn (default: 0)
-					'echo' => 1, // echoes if set to 1, returns a string if set to 0 (default: 1)
-					'hide_if_no_translation' => 0, // Ẩn ngôn ngữ nếu ngôn ngữ đó chưa có giá trị nào được dịch (default: 0)
-					'hide_current' => 0, // Ẩn ngôn ngữ hiện tại đang chọn nếu giá trị là 1 (default: 0)
-					'post_id' => null, // Nếu giá trị này thiết lập thì phần ngôn ngữ đó sẽ trỏ tới một post hoặc page chỉ định qua ID (default: null)
-					'raw' => 0 // Nếu bạn muốn tự viết lại CSS cho phần này thì thiết lập giá trị là 1 (default:0)
-				);
-			  	pll_the_languages($args);
-			  ?>
 		</header>
     
