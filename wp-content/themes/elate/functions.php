@@ -237,10 +237,12 @@ if (!function_exists('elate_getContent_Subpage')) {
         $name = $slug;
         $result = new WP_Query( 'pagename=' .$name);
         $my_wp_query = new WP_Query();
+        $current_lang = pll_current_language();
         $all_wp_pages = $my_wp_query->query(array(
             'post_type' => 'page', 
             'posts_per_page' => '-1',
-            'order' => 'asc'
+            'order' => 'asc',
+            'lang' => $current_lang
         ));
         return get_page_children( $result->post->ID, $all_wp_pages );
     }

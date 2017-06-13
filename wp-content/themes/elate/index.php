@@ -19,6 +19,8 @@
         // echo "</pre>";
         // die();
         $arrPages = elate_getContent_Subpage('elate');
+        // var_dump($arrPages);
+        // die();
         foreach ($arrPages as $page) {
             $content = apply_filters('the_content', $page->post_content);
             echo $content;
