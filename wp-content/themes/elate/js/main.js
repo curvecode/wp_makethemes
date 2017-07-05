@@ -466,9 +466,40 @@
 		aboutAnimate();
 		countersAnimate();
 		contactAnimate();
-		
+
+		// var hash = window.location.hash;
+		// if (hash.length > 2) {
+		// 	console.log(window.location.hash);
+		// 	console.log($('[data-section="' + hash.replace("#","") + '"]').offset().top);
+		// 	$('html, body').animate({
+		// 		scrollTop: $('[data-section="' + hash.replace("#","") + '"]').offset().top
+		// 	}, 500);
+		// }
 
 	});
 
 
 }());
+
+$(window).load(function() {
+	
+	// var hash = window.location.hash;
+	// if (hash.length > 2) {
+	// 	console.log(window.location.hash);
+	// 	console.log($('[data-section="' + hash.replace("#","") + '"]').offset().top);
+	// 	$('html, body').animate({
+	// 		scrollTop: $('[data-section="' + hash.replace("#","") + '"]').offset().top
+	// 	}, 500);
+	// }
+    setTimeout(function () {
+        alert('page is loaded and 1 minute has passed');   
+    }, 60000);
+});
+
+document.addEventListener("DOMContentLoaded", function(event) {
+   loaded=1;
+   alert(loaded);
+    setTimeout(function () {
+      loaded1min=1;
+    }, 60000);
+});
