@@ -217,10 +217,11 @@ if (!function_exists('thanhlt_entry_content')) {
  */
 if (!function_exists('wpdocs_excerpt_more')) {
     function wpdocs_excerpt_more( $more ) {
-        return sprintf( '...<a class="read-more" href="%1$s">%2$s</a>',
-            get_permalink( get_the_ID() ),
-            __( 'Read More', 'thanhlt' )
-        );
+        // return sprintf( '...<a class="read-more" href="%1$s">%2$s</a>',
+        //     get_permalink( get_the_ID() ),
+        //     __( 'Read More', 'thanhlt' )
+        // );
+        return sprintf("AAAAAA");
     }
     add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 }
@@ -237,7 +238,6 @@ if (!function_exists('wpdocs_custom_excerpt_length')) {
     }
     add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 }
-
 /*----------------
 thanhlt_entry_tag */
 if (!function_exists('thanhlt_entry_tag')) {
